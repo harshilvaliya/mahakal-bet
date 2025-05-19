@@ -1,6 +1,7 @@
-import { Bell, MessageCircle, User } from "lucide-react";
 import mahakalLogo from "../../assets/mahakal-logo-white.png";
-
+import whatsApp from "../../assets/whatsApp-icon.png";
+import telegram from "../../assets/telegram-icon.png";
+import message from "../../assets/message-icon.png";
 const Header = () => (
   <header className="sticky top-0 z-50 bg-gray-800 border-b border-gray-700 shadow-lg backdrop-blur-sm bg-opacity-90">
     <div className="container mx-auto px-4">
@@ -16,11 +17,10 @@ const Header = () => (
           />
         </div>
 
-        {/* Desktop navigation */}
-        <div className="hidden md:flex items-center gap-6">
-          <Bell className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-          <MessageCircle className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-          <User className="w-6 h-6 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+        <div className="flex items-center gap-2 md:gap-6">
+          <img src={whatsApp} className="w-8 h-8 cursor-pointer" />
+          <img src={telegram} className="w-8 h-8  cursor-pointer" />
+          <img src={message} className="w-8 h-8  cursor-pointer" />
         </div>
       </div>
     </div>
