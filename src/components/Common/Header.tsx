@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import mahakalLogo from "../assets/mahakal-logo-white.png";
+import mahakalLogo from "../../assets/mahakal-logo-white.png";
 import { NavLink } from "react-router-dom";
 
 interface NavLink {

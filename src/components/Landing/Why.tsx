@@ -1,10 +1,10 @@
 import React from "react";
 
-import icon1 from "../assets/secure.5ea4a16e.svg";
-import icon2 from "../assets/instant-id.b661c2ea.svg";
-import icon3 from "../assets/multiple-platforms.89b49131.svg";
-import icon4 from "../assets/fast-withdrawals.f25acab9.svg";
-import icon5 from "../assets/24-7-support.1473b509.svg";
+import icon1 from "../../assets/secure.5ea4a16e.svg";
+import icon2 from "../../assets/instant-id.b661c2ea.svg";
+import icon3 from "../../assets/multiple-platforms.89b49131.svg";
+import icon4 from "../../assets/fast-withdrawals.f25acab9.svg";
+import icon5 from "../../assets/24-7-support.1473b509.svg";
 
 interface FeatureCardProps {
   title: string;

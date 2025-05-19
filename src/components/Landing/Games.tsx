@@ -1,15 +1,15 @@
 import React from "react";
 
-import favIcon from "../assets/fav-star.svg";
-import liveCasinoIcon from "../assets/casino.svg";
-import crashGamesIcon from "../assets/crash-games.svg";
-import slotIcon from "../assets/slot.svg";
-import instantWinIcon from "../assets/instant-win.svg";
-import tableGameIcon from "../assets/table-game.svg";
-import gameShowsIcon from "../assets/game-shows.svg";
-import rouletteIcon from "../assets/roulette.svg";
-import topGamesIcon from "../assets/top-games.svg";
-import virtualSportsIcon from "../assets/virtual-sport.svg";
+import favIcon from "../../assets/fav-star.svg";
+import liveCasinoIcon from "../../assets/casino.svg";
+import crashGamesIcon from "../../assets/crash-games.svg";
+import slotIcon from "../../assets/slot.svg";
+import instantWinIcon from "../../assets/instant-win.svg";
+import tableGameIcon from "../../assets/table-game.svg";
+import gameShowsIcon from "../../assets/game-shows.svg";
+import rouletteIcon from "../../assets/roulette.svg";
+import topGamesIcon from "../../assets/top-games.svg";
+import virtualSportsIcon from "../../assets/virtual-sport.svg";
 
 interface GameCategory {
   id: string;

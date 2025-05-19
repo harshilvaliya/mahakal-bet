@@ -1,8 +1,8 @@
 import React from "react";
 
-import featureMobile1 from "../assets/fet-mobile-1.webp.png";
-import featureMobile2 from "../assets/fet-mobile-2.webp";
-import featureMobile3 from "../assets/fet-mobile-3.webp";
+import featureMobile1 from "../../assets/fet-mobile-1.webp.png";
+import featureMobile2 from "../../assets/fet-mobile-2.webp";
+import featureMobile3 from "../../assets/fet-mobile-3.webp";
 
 interface Feature {
   id: string;

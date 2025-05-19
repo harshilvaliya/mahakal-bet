@@ -1,6 +1,6 @@
 import React from "react";
-import mobile1 from "../assets/hero-mobile-1.webp.png";
-import mobile2 from "../assets/hero-mobile-2.webp";
+import mobile1 from "../../assets/hero-mobile-1.webp.png";
+import mobile2 from "../../assets/hero-mobile-2.webp";
 
 const Hero: React.FC = () => {
   return (

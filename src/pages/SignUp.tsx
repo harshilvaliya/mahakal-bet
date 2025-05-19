@@ -96,9 +96,9 @@ export const SignUp = () => {
 
   useEffect(() => {
     if (!referId) {
-        commonError("Please get your SignUp Link From Your Agent", 'error')
-        navigate('/');
-      }
+      commonError("Please get your SignUp Link From Your Agent", "error");
+      navigate("/");
+    }
   }, []);
 
   useEffect(() => {
