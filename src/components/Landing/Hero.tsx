@@ -18,12 +18,7 @@ const Hero: React.FC = () => {
               IDs—all in one secure platform.
             </p>
             <div className="flex items-center justify-center lg:justify-start gap-4">
-              <a
-                href="http://"
-                className="bg-primary-400 hover:bg-primary-600 text-light text-lg lg:text-xl transition-all font-bold border-transparent rounded-xl cursor-pointer py-2 lg:py-4 px-4 lg:px-8"
-              >
-                Download App
-              </a>
+              
               <a
                 href="http://"
                 className="bg-transparent hover:!bg-primary-600 text-light transition-all text-lg lg:text-xl font-bold border border-primary-600 rounded-xl cursor-pointer py-[7px] lg:py-[15px] px-4 lg:px-8"

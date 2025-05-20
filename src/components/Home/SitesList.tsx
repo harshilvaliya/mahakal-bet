@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 type Links = {
   url: string;
@@ -29,14 +29,14 @@ interface ApiResponse {
   }>;
 }
 
-const SiteCard = ({ site }: { site: Links }) => (
+const SiteCard = ({ site, nav }: { site: Links; nav: any }) => (
   <div className="flex items-center justify-between p-4 hover:bg-gray-800 transition-colors">
     <div className="flex items-center gap-3">
       <div className="relative">
         <img
           src={site.logo}
           alt={site.name}
-          className="w-10 h-10 rounded-full object-contain bg-white"
+          className="w-10 h-10 rounded-full object-contain bg-black"
         />
         <div className="absolute -top-1 -right-1 px-1.5 py-0.5 bg-green-500 text-white text-[8px] rounded-sm font-medium">
           Trending
@@ -47,12 +47,13 @@ const SiteCard = ({ site }: { site: Links }) => (
         <p className="text-xs text-gray-400">{site.url}</p>
       </div>
     </div>
-    <NavLink
-      to={`/sign-up?refer=${site.userId}&agent=${site.agent}`}
+    <div
+      onClick={() => nav(`/sign-up?refer=${site.userId}&agent=${site.agent}`, { state: site })}
+      // to={`/sign-up?refer=${site.userId}&agent=${site.agent}`}
       className="bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded text-sm font-medium transition-colors"
     >
       Create
-    </NavLink>
+    </div>
   </div>
 );
 
@@ -60,6 +61,7 @@ const SitesList = ({ id }: { id: string }) => {
   const [sites, setSites] = useState<Links[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const nav = useNavigate();
 
   useEffect(() => {
     const fetchSites = async () => {
@@ -112,7 +114,7 @@ const SitesList = ({ id }: { id: string }) => {
       </div>
       <div className="divide-y divide-gray-800">
         {sites.map((site, index) => (
-          <SiteCard key={index} site={site} />
+          <SiteCard key={index} site={site} nav={nav} />
         ))}
       </div>
     </section>

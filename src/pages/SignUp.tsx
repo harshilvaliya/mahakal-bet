@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { regUserApi } from "../api/register";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { commonError, fetchCheckUser, fetchGenOtp } from "../api/apiconfig";
 import mahakalLogo from "../assets/mahakal-logo-white.png";
 
 export const SignUp = () => {
   const params = new URLSearchParams(window.location.search);
+  const siteData = useLocation();
+
   const referId = params.get("refer");
   const agent = params.get("agent");
   const navigate = useNavigate();
@@ -113,7 +115,17 @@ export const SignUp = () => {
   }, [loginData.username]);
 
   return (
-    <div className="min-h-screen bg-secondary-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-secondary-200 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center mb-8 bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 shadow-lg">
+        <img
+          src={siteData.state.logo}
+          alt={siteData.state.name}
+          className="h-12 w-auto object-contain mb-2"
+        />
+        <h2 className="text-xl font-semibold text-white/90 tracking-wide">
+          {siteData.state.name}
+        </h2>
+      </div>
       <div className="max-w-md w-full bg-secondary-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-secondary-700/50">
         <div className="flex justify-center">
           <a href="/">
@@ -354,26 +366,6 @@ export const SignUp = () => {
                 <>Sign Up</>
               )}
             </button>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                {/* <div className="w-full border-t border-secondary-700"></div> */}
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-secondary-800/80 text-gray-400">
-                  Already have an account?
-                </span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => navigate("/")}
-              className="group relative w-full flex justify-center py-3 px-4 border border-primary-600 text-sm font-medium rounded-lg text-light hover:bg-primary-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200"
-            >
-              Login
-              <i className="fas fa-sign-in-alt ml-2 mt-0.5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
           </div>
 
           <p className="text-xs text-gray-400 text-center mt-4">
@@ -398,12 +390,3 @@ export const SignUp = () => {
     </div>
   );
 };
-
-// @keyframes fadeIn {
-//   from { opacity: 0; transform: translateY(10px); }
-//   to { opacity: 1; transform: translateY(0); }
-// }
-
-// .animate-fadeIn {
-//   animation: fadeIn 0.3s ease-out forwards;
-// }
