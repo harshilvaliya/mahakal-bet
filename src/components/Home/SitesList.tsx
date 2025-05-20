@@ -5,6 +5,8 @@ type Links = {
   url: string;
   userId: string;
   agent: string;
+  name: string;
+  logo: string;
 };
 
 interface ApiResponse {
@@ -16,23 +18,33 @@ interface ApiResponse {
       userid: string;
     }>;
     agent: string;
+    created_at: string;
+    updated_at: string;
+    inuserid: number;
   };
+  sites: Array<{
+    site: string;
+    name: string;
+    logo: string;
+  }>;
 }
 
 const SiteCard = ({ site }: { site: Links }) => (
   <div className="flex items-center justify-between p-4 hover:bg-gray-800 transition-colors">
     <div className="flex items-center gap-3">
       <div className="relative">
-        <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-lg">
-          {site.url}
-        </div>
+        <img
+          src={site.logo}
+          alt={site.name}
+          className="w-10 h-10 rounded-full object-contain bg-white"
+        />
         <div className="absolute -top-1 -right-1 px-1.5 py-0.5 bg-green-500 text-white text-[8px] rounded-sm font-medium">
-          N/A
+          Trending
         </div>
       </div>
       <div>
-        <h4 className="font-medium text-white">name</h4>
-        <p className="text-xs text-gray-400">url</p>
+        <h4 className="font-medium text-white">{site.name}</h4>
+        <p className="text-xs text-gray-400">{site.url}</p>
       </div>
     </div>
     <NavLink
@@ -54,19 +66,19 @@ const SitesList = ({ id }: { id: string }) => {
       try {
         const response = await fetch(
           `https://webapi.9xxbet.com/api/v1/admin/getlinkcode?id=${id}`
-          // `https://webapi.9xxbet.com/api/v1/admin/getlinkcode?id=12c2442a-87e6-402e-b7f1-a3f4d104917c`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch sites");
         }
         const result: ApiResponse = await response.json();
 
-        const formattedSites = result.data.links.map((link) => ({
+        const formattedSites = result.data.links.map((link, index) => ({
           url: link.site.trim(),
           userId: link.userid,
-          agent: result.data.agent
+          agent: result.data.agent,
+          name: result.sites[index].name,
+          logo: result.sites[index].logo,
         }));
-        console.log(formattedSites, result);
 
         setSites(formattedSites);
       } catch (err) {

@@ -81,7 +81,7 @@ const Features: React.FC = () => {
   return (
     <section
       id="features-section"
-      className="py-12 md:pt-20 md:pb-28 px-4 bg-SectionGradient"
+      className="py-12 md:pt-20 md:pb-28 px-4 bg-secondary-0"
       aria-labelledby="features-title"
     >
       <div className="max-w-[1320px] mx-auto">

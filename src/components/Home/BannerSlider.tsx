@@ -7,11 +7,11 @@ import "swiper/css/pagination";
 // @ts-ignore
 import "swiper/css/autoplay";
 
-import banner1 from "../../assets/swiper-banner-1.jfif";
+import banner1 from "../../assets/swiper-banner-1.png";
 import banner2 from "../../assets/swiper-banner-2.jfif";
-import banner3 from "../../assets/swiper-banner-3.jfif";
-import banner4 from "../../assets/swiper-banner-4.jfif";
-import banner5 from "../../assets/swiper-banner-5.jfif";
+import banner3 from "../../assets/swiper-banner-3.png";
+import banner4 from "../../assets/swiper-banner-4.png";
+import banner5 from "../../assets/swiper-banner-5.png";
 
 const banners = [banner1, banner2, banner3, banner4, banner5];
 
@@ -24,7 +24,8 @@ const BannerSlider = () => (
       pagination={{
         clickable: true,
         bulletClass: "swiper-pagination-bullet !bg-white !opacity-50",
-        bulletActiveClass: "swiper-pagination-bullet-active !bg-white !opacity-100",
+        bulletActiveClass:
+          "swiper-pagination-bullet-active !bg-white !opacity-100",
       }}
       autoplay={{
         delay: 3000,

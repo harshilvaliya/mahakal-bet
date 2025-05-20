@@ -87,14 +87,14 @@ const Why: React.FC = () => {
   return (
     <section
       id="why-choose-section"
-      className="py-8 sm:py-12 md:py-20 px-4 bg-secondary-0 shape-grid overflow-hidden"
+      className="py-8 sm:py-12 md:py-20 px-4 bg-secondary-200 shape-grid overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-[42px] mb-6 sm:mb-8 md:mb-10 text-light font-semibold text-center">
           <span className="text-primary-600">Why</span> Choose Mahakal?
         </h2>
         <div className="-mx-2 sm:-mx-3">
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap md:flex-nowrap justify-center">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
