@@ -31,26 +31,32 @@ interface ApiResponse {
 
 const SiteCard = ({ site, nav }: { site: Links; nav: any }) => (
   <div className="flex items-center justify-between p-4 hover:bg-gray-800 transition-colors">
-    <div className="flex items-center gap-3">
-      <div className="relative">
-        <img
-          src={site.logo}
-          alt={site.name}
-          className="w-10 h-10 rounded-full object-contain bg-black"
-        />
-        <div className="absolute -top-1 -right-1 px-1.5 py-0.5 bg-green-500 text-white text-[8px] rounded-sm font-medium">
-          Trending
+    <NavLink to={site.url}>
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          <img
+            src={site.logo}
+            alt={site.name}
+            className="w-10 h-10 rounded-full object-contain bg-black"
+          />
+          <div className="absolute -top-1 -right-1 px-1.5 py-0.5 bg-green-500 text-white text-[8px] rounded-sm font-medium">
+            Trending
+          </div>
+        </div>
+        <div>
+          <h4 className="font-medium text-white">{site.name}</h4>
+          <p className="text-xs text-gray-400">{site.url}</p>
         </div>
       </div>
-      <div>
-        <h4 className="font-medium text-white">{site.name}</h4>
-        <p className="text-xs text-gray-400">{site.url}</p>
-      </div>
-    </div>
+    </NavLink>
     <div
-      onClick={() => nav(`/sign-up?refer=${site.userId}&agent=${site.agent}`, { state: site })}
+      onClick={() =>
+        nav(`/sign-up?refer=${site.userId}&agent=${site.agent}`, {
+          state: site,
+        })
+      }
       // to={`/sign-up?refer=${site.userId}&agent=${site.agent}`}
-      className="bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded text-sm font-medium transition-colors"
+      className="bg-teal-600 hover:bg-teal-700 px-4 py-1.5 rounded text-sm font-medium transition-colors cursor-pointer"
     >
       Create
     </div>
