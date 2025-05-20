@@ -5,7 +5,8 @@ export const regUserApi = async (
   mobileNum: any,
   bonusType: any,
   otp: any,
-  refer: any
+  refer: any,
+  agent: any
 ) => {
   const raw = JSON.stringify({
     stUserName,
@@ -14,15 +15,19 @@ export const regUserApi = async (
     bonusType,
     otp,
     refer,
+    agent
   });
 
-  const res = await fetch("https://webapi.9xxbet.com/api/v1/users/signupallpanel", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: raw,
-  });
+  const res = await fetch(
+    "https://webapi.9xxbet.com/api/v1/users/signupallpanel",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: raw,
+    }
+  );
 
   const resData = await res.json();
   return resData;

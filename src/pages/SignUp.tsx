@@ -7,6 +7,7 @@ import mahakalLogo from "../assets/mahakal-logo-white.png";
 export const SignUp = () => {
   const params = new URLSearchParams(window.location.search);
   const referId = params.get("refer");
+  const agent = params.get("agent");
   const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
@@ -75,7 +76,8 @@ export const SignUp = () => {
         loginData.mnum,
         0,
         loginData.otp,
-        referId
+        referId,
+        agent
       )
         .then((data) => {
           setIsLoading(false);
